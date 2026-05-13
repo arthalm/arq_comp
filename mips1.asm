@@ -3,7 +3,7 @@ str1: .asciiz "Resultado da raiz: "
 str2: .asciiz "\nDigite um número que deseja calcular a raiz: "
 str3: .asciiz "\nDeseja continuar calculando as raízes de números? 1 - SIM / 0 - NÃO: "
 str4: .asciiz "Encerrando o programa de cálculo de raízes..."
-str_err: .asciiz "Erro! O número digitado não possui uma raiz quadrada perfeita. Tente novamente."
+str_err: .asciiz "Erro! O número digitado não possui uma raiz quadrada perfeita. Tente novamente.\n"
 .text
 .globl main
 
