@@ -1,15 +1,15 @@
 .data
 str1: .asciiz "Resultado da raiz: "
-str2: .asciiz "\nDigite um número que deseja calcular a raiz: "
-str3: .asciiz "\nDeseja continuar calculando as raízes de números? 1 - SIM / 0 - NÃO: "
-str4: .asciiz "Encerrando o programa de cálculo de raízes..."
-str_err: .asciiz "Erro! O número digitado não possui uma raiz quadrada perfeita. Tente novamente.\n"
+str2: .asciiz "\nDigite um nÃºmero que deseja calcular a raiz: "
+str3: .asciiz "\nDeseja continuar calculando as raÃ­zes de nÃºmeros? 1 - SIM / 0 - NÃƒO: "
+str4: .asciiz "Encerrando o programa de cÃ¡lculo de raÃ­zes..."
+str_err: .asciiz "Erro! O nÃºmero digitado nÃ£o possui uma raiz quadrada perfeita. Tente novamente.\n"
 .text
 .globl main
 
 main:
-li $t5, 0
-li $t6, 10
+li $t5, 0 # incrementador i
+li $t6, 10 # quantidade de repetiÃ§Ãµes
 
 loop:
 # imprimindo a str2
@@ -17,7 +17,7 @@ li $v0, 4
 la $a0, str2
 syscall
 
-# recebendo o número do terminal
+# recebendo o nÃºmero do terminal
 li $v0, 5
 syscall
 move $s0, $v0 # x
@@ -37,7 +37,7 @@ slt $t0, $s0, $t3 # x < s
 j while
 
 res:
-# verificando se o número digitado possui raiz
+# verificando se o nÃºmero digitado possui raiz
 mult $t1, $t1
 mflo $t7
 bne $t7, $s0, err
